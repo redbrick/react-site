@@ -2,9 +2,6 @@ import React from 'react';
 import '../core.css';
 
 class Status extends React.Component {
-  constructor(){
-    super()
-  }
 
   render(){
   return (

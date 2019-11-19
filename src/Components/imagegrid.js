@@ -2,17 +2,15 @@ import React from 'react';
 import '../core.css';
 
 class ImageGrid extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   render(){
       const mapImages = () => {
           let display = []
           this.props.images.map((url) => {
             display.push(
-                <img key={url} class="GridImage" src={url} />
+                <img key={url} class="GridImage" src={url} alt={"Event"} />
             )
+            return undefined
           })
           return shuffle(display)
       }

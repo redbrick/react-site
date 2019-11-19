@@ -2,9 +2,6 @@ import React from 'react';
 import '../core.css';
 
 class Committee extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   render(){
 
@@ -13,11 +10,12 @@ class Committee extends React.Component {
         this.props.cmtmembers.map((member) => {
             members.push(
                 <div className="Member">
-                    <img src={member.image} />
+                    <img src={member.image} alt={"image of" + member.name} />
                     <div className="Member-Name">{member.name}</div>
                     <div className="Member-Position">{member.position}</div>
                 </div>
             )
+            return undefined
         })
         return members
     }

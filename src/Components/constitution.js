@@ -3,10 +3,6 @@ import '../core.css';
 import displayConstitution from './About/constitution'
 
 class Constitution extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
   render(){
   return (
     <div className="Main">

@@ -3,10 +3,6 @@ import '../core.css';
 import Event from './event';
 
 class Events extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
   render(){
 
     const mapEvents = () => {
@@ -15,6 +11,7 @@ class Events extends React.Component {
         eventz.push(
           <Event key={event.name} event={event}/>
         )
+        return undefined
       })
       return eventz
     }

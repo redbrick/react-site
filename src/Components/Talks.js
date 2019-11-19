@@ -2,9 +2,6 @@ import React from 'react';
 import '../core.css';
 
 class Slides extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   render(){
 
@@ -13,7 +10,7 @@ class Slides extends React.Component {
       this.props.slides.map((slide) => {
         slides.push(
             <div className="Event">
-            <img className="Event-Featured" src={slide.image} />
+            <img className="Event-Featured" src={slide.image} alt={slide.name} />
             <div className="Event-Info">
                 <div className="Event-Heading">
                     {slide.name}
@@ -26,6 +23,7 @@ class Slides extends React.Component {
             </div>
         </div>
         )
+        return undefined
       })
       return slides
     }

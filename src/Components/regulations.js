@@ -3,9 +3,6 @@ import '../core.css';
 import displayRegulations from './About/regulations'
 
 class Regulations extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   render(){
   return (

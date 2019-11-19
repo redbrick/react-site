@@ -51,7 +51,6 @@ class App extends React.Component {
       if (amount >= max)
         return this.state.images
       let possibilites = Object.assign(this.state.images)
-      let val = undefined
       while (possibilites.length > amount)
         {
           let val = Math.floor(Math.random() * possibilites.length)

@@ -3,13 +3,6 @@ import '../core.css';
 import {Link, useRouteMatch} from 'react-router-dom'
 
 class Navbar extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
-
-  
-
   render(){
 
     let OldSchoolMenuLink = ({ label, to, activeOnlyWhenExact }) => {
@@ -28,7 +21,7 @@ class Navbar extends React.Component {
 
   return (
     <div className="Navbar">
-    <img className="Logo" src="/logo-light.png" />
+    <img className="Logo" src="/logo-light.png" alt="Redbrick Logo" />
       <ul>
           <OldSchoolMenuLink to="/" label="Home" activeOnlyWhenExact={true}></OldSchoolMenuLink>
           <OldSchoolMenuLink to="/Events" label="Events"></OldSchoolMenuLink>

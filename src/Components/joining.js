@@ -3,9 +3,6 @@ import '../core.css';
 
 
 class Joining extends React.Component {
-  constructor(props){
-    super(props)
-  }
   render(){
     
   return (

@@ -2,10 +2,6 @@ import React from 'react';
 import '../core.css';
 
 class Page extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
   render(){
 
     const displayPage = () => {
@@ -16,6 +12,7 @@ class Page extends React.Component {
                     <h1>{heading}</h1>
                 </div>
             )
+            return undefined
         })
         let sections = []
         this.props.page.sections.map((section) => {
@@ -31,7 +28,9 @@ class Page extends React.Component {
                         {para}
                     </p>
                 )
+                return undefined
             })
+            return undefined
         })
         page.push(sections)
         return page

@@ -2,14 +2,10 @@ import React from 'react';
 import '../core.css';
 
 class Event extends React.Component {
-  constructor(props){
-    super(props)
-  }
-
   render(){
   return (
     <div className="Event">
-        <img className="Event-Featured" src={this.props.event.image} />
+        <img className="Event-Featured" src={this.props.event.image} alt={this.props.event.name} />
         <div className="Event-Info">
             <div className="Event-Heading">
                 {this.props.event.name}
