@@ -18,7 +18,7 @@ class Exams extends React.Component {
       If you are thinking of running for the position of Admin, Webmaster or Helpdesk you must first pass an exam.
       </p>
       <p>
-          All past examinations are hosted on Github - <a href="https://github.com/redbrick/past-exams">Here</a>
+          All past examinations are hosted on Github - <a href="https://github.com/theycallmemac/redbrick-admin-examss">Here</a>
       </p>
     </div>
   );

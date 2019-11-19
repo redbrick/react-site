@@ -101,7 +101,7 @@ class App extends React.Component {
             </Route>
             <Route>
               <h1 style={{marginLeft: "2em"}}>404 - Page not found :(</h1>
-              <h2 style={{marginLeft: "3em"}}>If you think this is shouldn't be happening... email <a style={{color: "crimson" }}href="mailto:webmasted@redbrick.dcu.ie">me</a></h2>
+              <h2 style={{marginLeft: "3em"}}>If you think this is shouldn't be happening... email <a style={{color: "crimson" }}href="mailto:webmaster@redbrick.dcu.ie">me</a></h2>
               </Route>
         </Switch>
       </div>

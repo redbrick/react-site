@@ -20,41 +20,6 @@ html {
   flex: 5;
 }
 
-@media only screen and (max-width: 800px) {
-  .Core {
-    flex-direction: column;
-  }
-
-  .Main {
-    margin-left: 10%;
-    max-width: 100%;  
-  }
-
-  .Navbar {
-    width: 100vw;
-    min-height: 20vh;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .Status {
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .Status-Text {
-    display: none;
-  }
-
-  .Blocks {
-    flex-direction: column;
-  }
-
-}
-
 /* Navigation */ 
 
 .Navbar {
@@ -205,6 +170,10 @@ html {
   letter-spacing: -.02em;
 }
 
+.Events {
+  margin-bottom: 2rem;
+}
+
 /* Event */
 
 .Event {
@@ -280,6 +249,7 @@ h2 {
   color: #fcfcfc;
   background-color: rgba(215,23,1,0.5);
   min-width: 20%;
+  max-width: 300px;
   flex: 1;
   border-radius: 1em;
   font-weight: 500;
@@ -374,4 +344,54 @@ hr {
 code {
   display: block;
   color: crimson;
+}
+
+/* Button */
+
+.Button {
+  margin: 1rem;
+  border: 0;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid crimson;
+  border-radius: 25px;
+  color: white;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 800px) {
+  .Core {
+    flex-direction: column;
+  }
+
+  .Main {
+    margin-left: 10%;
+    max-width: 100%;  
+  }
+
+  .Navbar {
+    width: 100vw;
+    min-height: 20vh;
+    height: 50%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .Status {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .Status-Text {
+    display: none;
+  }
+
+  .Blocks {
+    flex-direction: column;
+  }
+
 }
