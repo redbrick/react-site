@@ -35,7 +35,7 @@ const servicesTab = {
             "subtitle": "",
             "paragraphs": [
                 "Redbrick is a great place to learn or use a vast range of programming languages, we have compilers, interpreters and libraries for:",
-                "Java, C++/C, Assembly, Perl, Python, PHP, Ruby, Shell, Haskell, Objective C, NodeJs, Go",
+                "Java, C++/C, Assembly, Pascal, Perl, Python, PHP, Ruby, Shell, Haskell, Objective C, NodeJs, Go",
                 "Additionally we provide databases for projects and personal use. Hit up an Admin for more information!"
             ],
         },
