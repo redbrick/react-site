@@ -1,6 +1,6 @@
 const base = 'https://api.uptimerobot.com/';
 
-const ok = { text: 'All Services Are Currently Active', colour: 'green' };
+export const ok = { text: 'All Services Are Currently Active', colour: 'green' };
 
 export function getStatus(apiKey) {
   return fetch(`${base}v2/getMonitors`, {

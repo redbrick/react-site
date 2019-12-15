@@ -1,4 +1,4 @@
-const servicesTab = {
+export default {
   headings: ['Services', 'All about what we offer'],
   sections: [
     {
@@ -38,5 +38,3 @@ const servicesTab = {
     },
   ],
 };
-
-export default servicesTab;
