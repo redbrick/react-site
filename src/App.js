@@ -1,114 +1,130 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Navbar from './components/navbar';
+import Home from './components/home';
+import Status from './components/status';
+import About from './components/about';
+import Page from './components/page';
+import Committee from './components/committee';
+import Constitution from './components/constitution';
+import Regulations from './components/regulations';
+import Services from './components/services';
+import Help from './components/help';
+import Error from './components/error';
+
+import societyPage from './content/theSociety';
+import contactPage from './content/contact';
+
+import { shuffle } from './utils/shuffle';
 import './core.css';
-import Navbar from './Components/navbar';
-import Home from './Components/home';
-import Status from './Components/status';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import About from './Components/about';
-import Page from './Components/page';
-import Committee from './Components/committee';
-import Constitution from './Components/constitution';
-import Regulations from './Components/regulations';
-import societyPage from './Components/About/thesociety'
-import contactPage from './Components/About/contact'
-import Services from './Components/services';
-import Help from './Components/help';
 
-class App extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      events: [],
-      pastEvents: [],
-      slides: [],
-      committee: [],
-      images: [],
-    }
-    this.dataURL = "https://fraz.redbrick.dcu.ie/data.json"
-    fetch(this.dataURL).then((resp) => {
-      resp.json().then((js) => {
-        let data = js
-        console.log(data)
-        this.setState({
-          events: data[0],
-          pastEvents: data[1],
-          committee: data[2],
-          slides: data[3],
-          images: data[4],
-        })
-      })
-    })
-  }
+const getRandomImages = (images, amount) =>
+  amount >= images.length ? images : shuffle(images).slice(0, amount);
 
-  render(){
+export default function App() {
+  const [events, setEvents] = useState([]);
+  const [pastEvents, setPastEvents] = useState([]);
+  const [slides, setSlides] = useState([]);
+  const [committee, setCommittee] = useState([]);
+  const [images, setImages] = useState([]);
+  const dataURL = 'https://fraz.redbrick.dcu.ie/data.json';
+  useEffect(() => {
+    fetch(dataURL)
+      .then(resp => resp.json())
+      .then(data => {
+        setEvents(data[0]);
+        setPastEvents(data[1]);
+        setCommittee(data[2]);
+        setSlides(data[3]);
+        setImages(data[4]);
+      });
+  }, [dataURL]);
 
-    const getRandomImages = (amount) => {
-      let max = this.state.images.length
-      if (amount >= max)
-        return this.state.images
-      let possibilites = Object.assign(this.state.images)
-      while (possibilites.length > amount)
-        {
-          let val = Math.floor(Math.random() * possibilites.length)
-          possibilites.splice(val, 1)
-        }
-      return possibilites
-    }
-
-    const images = getRandomImages(18)
   return (
     <Router>
-    <div className="Core">
-    {console.log(this.state)}
-
-      <Navbar />
-      <div className="Right">
-        <Status />
-        <Switch>
+      <div className="Core">
+        <Navbar />
+        <div className="Right">
+          <Status />
+          <Switch>
             <Route exact path="/">
-              <Home images={images} pastEvents={this.state.pastEvents} slides={this.state.slides} events={this.state.events} isEventsPage={false} />
+              <Home
+                images={getRandomImages(images, 18)}
+                pastEvents={pastEvents}
+                slides={slides}
+                events={events}
+                isEventsPage={false}
+              />
             </Route>
-            <Route path="/Events">
-              <Home events={this.state.events} pastEvents={this.state.pastEvents} slides={this.state.slides} isEventsPage={true}  />
+            <Route path="/events">
+              <Home events={events} pastEvents={pastEvents} slides={slides} isEventsPage={true} />
             </Route>
-            <Route exact path="/About">
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route path="/About/The-Society">
-                  <Page page={societyPage}/>
-                </Route>
-              <Route path="/About/Committee">
-                <Committee year={"2019/20"} cmtmembers={this.state.committee} />
-              </Route>
-              <Route path="/About/Constitution">
-                <Constitution />
-              </Route>
-              <Route path="/About/Contact">
-                <Page page={contactPage} />
-              </Route>
-              <Route path="/About/Regulations">
-                <Regulations />
-              </Route>
-            <Route path="/Help">
+            <Route path="/about/society">
+              <Page page={societyPage} />
+            </Route>
+            <Route path="/about/committee">
+              <Committee year="2019/20" members={committee} />
+            </Route>
+            <Route path="/about/constitution">
+              <Constitution />
+            </Route>
+            <Route path="/about/contact">
+              <Page page={contactPage} />
+            </Route>
+            <Route path="/about/regulations">
+              <Regulations />
+            </Route>
+            <Route path="/help">
               <Help />
             </Route>
-            <Route path="/Services">
+            <Route path="/services">
               <Services />
             </Route>
+            <Route path="/401">
+              <Error code="401" message="Permission Denied">
+                You do not have permission to access this section. If you think this is an error
+                please contact the{' '}
+                <a style={{ color: 'crimson' }} href="mailto:webmaster@redbrick.dcu.ie">
+                  webmaster
+                </a>
+              </Error>
+            </Route>
+            <Route path="/403">
+              <Error code="403" message="Forbidden">
+                Access to this section Forbidden.
+              </Error>
+            </Route>
+            <Route path="/500">
+              <Error code="500" message="Internal Server Error">
+                An Unexpected Error has occured. Please try again or contact the{' '}
+                <a style={{ color: 'crimson' }} href="mailto:webmaster@redbrick.dcu.ie">
+                  webmaster
+                </a>{' '}
+                with details.
+              </Error>
+            </Route>
+            <Route path="/503">
+              <Error code="503" message="Service Unavailable">
+                The server cannot handle the request because it is overloaded or down for
+                maintenance.
+              </Error>
+            </Route>
             <Route>
-              <h1 style={{marginLeft: "2em"}}>404 - Page not found :(</h1>
-              <h2 style={{marginLeft: "3em"}}>If you think this is shouldn't be happening... email <a style={{color: "crimson" }}href="mailto:webmaster@redbrick.dcu.ie">me</a></h2>
-              </Route>
-        </Switch>
+              <Error code="404" message="Page not Found">
+                The Page you are looking for could not be found. If you think this is an error
+                please contact the{' '}
+                <a style={{ color: 'crimson' }} href="mailto:webmaster@redbrick.dcu.ie">
+                  webmaster
+                </a>
+              </Error>
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
     </Router>
   );
 }
-}
-
-export default App;

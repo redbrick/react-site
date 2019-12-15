@@ -20,13 +20,13 @@ html {
   flex: 5;
 }
 
-/* Navigation */ 
+/* Navigation */
 
 .Navbar {
   flex: 1;
   min-height: 100vh;
-  border-right: .2em solid;
-  border-color:#202020;
+  border-right: 0.2em solid;
+  border-color: #202020;
   font-weight: 600;
   background-color: #181818;
   color: #7a7a7a;
@@ -48,10 +48,10 @@ html {
   border: 0px;
   border-left: 1px;
   border-style: solid;
-  border-color:#202020;
+  border-color: #202020;
 }
 
-.Navbar ul li:nth-child(n+2) {
+.Navbar ul li:nth-child(n + 2) {
   margin-top: 10px;
 }
 
@@ -61,7 +61,7 @@ html {
   padding-left: 10px;
   border-left: 1px;
   border-style: solid;
-  border-color:#202020;
+  border-color: #202020;
 }
 
 .Navbar ul li:hover {
@@ -77,7 +77,7 @@ html {
   border-color: red;
 }
 
-.Navbar .inactive a{
+.Navbar .inactive a {
   color: #7a7a7a;
 }
 
@@ -89,12 +89,11 @@ html {
   color: white;
 }
 
-
 /* Status */
 
 .Status {
-  border-bottom: .2em solid;
-  border-color:#202020;
+  border-bottom: 0.2em solid;
+  border-color: #202020;
   padding: 1em;
   display: flex;
   flex-grow: 1;
@@ -104,21 +103,21 @@ html {
 .Status-Text {
   flex: 1;
   color: green;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .Status input {
   border: 1px solid;
   border-radius: 1em;
   background-color: #121212;
-  padding: .2em;
-  padding-left: .5em;
+  padding: 0.2em;
+  padding-left: 0.5em;
   color: whitesmoke;
 }
 
 .Status .Search {
-  margin-left: .5em;
-  color:red;
+  margin-left: 0.5em;
+  color: red;
 }
 
 /* Main */
@@ -140,7 +139,7 @@ html {
   list-style: none;
 }
 
-.Tab:nth-child(n+2){
+.Tab:nth-child(n + 2) {
   margin-left: 20px;
 }
 
@@ -167,7 +166,7 @@ html {
 
 .Events-Header {
   font-size: 14px;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 
 .Events {
@@ -181,7 +180,7 @@ html {
   max-width: 75%;
 }
 
-.Event:nth-child(n+2){
+.Event:nth-child(n + 2) {
   margin-top: 2em;
 }
 
@@ -215,11 +214,11 @@ html {
 }
 
 .fa {
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .Event-Description {
-  margin-top: .5em;
+  margin-top: 0.5em;
   font-size: 16px;
 }
 
@@ -243,13 +242,12 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 90%;
 }
 
 .Block {
   color: #fcfcfc;
-  background-color: rgba(215,23,1,0.5);
-  min-width: 20%;
-  max-width: 300px;
+  background-color: rgba(215, 23, 1, 0.5);
   flex: 1;
   border-radius: 1em;
   font-weight: 500;
@@ -258,7 +256,9 @@ h2 {
   font-size: 1em;
 }
 
-.Block a {
+.Blocks a {
+  min-width: 20%;
+  max-width: 300px;
   text-align: center;
   color: #fcfcfc;
   text-decoration: none;
@@ -273,9 +273,6 @@ h2 {
 .Page-Section a {
   color: crimson;
 }
-
-
-
 
 /* Committee */
 
@@ -292,12 +289,12 @@ h2 {
   border-radius: 50%;
 }
 
-.Member-Name{
+.Member-Name {
   color: white;
-  padding: .2em;
+  padding: 0.2em;
 }
 
-.Member-Position{
+.Member-Position {
   font-size: 12px;
 }
 
@@ -306,7 +303,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* Image Grid */ 
+/* Image Grid */
 
 .ImageGrid {
   display: flex;
@@ -317,7 +314,6 @@ h2 {
 .GridImage {
   padding: 4px;
   vertical-align: middle;
-  max-width: 70%;
   max-height: 200px;
 }
 
@@ -338,7 +334,7 @@ hr {
   display: inline-block;
   background-color: #6f6f6f;
   border-color: #6f6f6f;
-  width: 30em;
+  width: 90%;
 }
 
 code {
@@ -367,7 +363,7 @@ code {
 
   .Main {
     margin-left: 10%;
-    max-width: 100%;  
+    max-width: 100%;
   }
 
   .Navbar {
@@ -377,6 +373,22 @@ code {
     align-items: center;
     justify-items: center;
     text-align: center;
+  }
+
+  .Navbar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  .Navbar ul li {
+    margin: 10px 0 0;
+    padding: 0 1rem;
+    border-left: 0;
   }
 
   .Status {
@@ -393,5 +405,4 @@ code {
   .Blocks {
     flex-direction: column;
   }
-
 }
