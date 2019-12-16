@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 
 import Layout from '../components/layout.jsx';
 import SEO from '../components/seo.jsx';
-import Page from '../components/page.jsx';
-import Exams from '../components/exams.jsx';
-import Joining from '../components/joining.jsx';
-
-import helpdeskTab from '../content/helpdesk.js';
-import servicesTab from '../content/services.js';
+import Exams from '../content/exams.mdx';
+import Joining from '../content/joining.mdx';
+import Helpdesk from '../content/helpdesk.mdx';
+import Services from '../content/services.mdx';
 
 const active = (tab, id) => (tab === id ? 'Tab Tab-Active' : 'Tab');
 
 function displayTab(tab) {
   switch (tab) {
     case 0:
-      return <Page page={servicesTab} />;
+      return <Services />;
     case 1:
-      return <Page page={helpdeskTab} />;
+      return <Helpdesk />;
     case 2:
       return <Joining />;
     case 3:

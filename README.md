@@ -30,21 +30,20 @@ The google sheet controlling the information can be found
 ## Deployment
 
 1. git clone the repo.
-2. run npm install.
-3. ensure the "homepage" in package.json is set correctly.
-4. ensure this.dataURL is set to pull information from the correct JSON file.
-5. run npm build.
+2. run `yarn`.
+3. ensure the `homepage` in `package.json` is set correctly.
+4. ensure `siteMetadata.dataURL` in `gatsby-config.js` is set to pull
+   information from the correct JSON file.
+5. run `yarn build`.
 6. ensure there are no errors in the output.
-7. copy &amp; paste the .htaccess file located in the apache folder into the
-   build folder.
-8. copy &amp; paste the static files in the build folder that has been created.
+7. copy &amp; paste the static files in the build folder that has been created.
    This is your site now :)
 
-- Ensure the JSON file this.dataURL is set to pull from is being regularly
-  updated (~ once day)
+- Ensure the JSON file `siteMetadata.dataURL` is set to pull from is being
+  regularly updated (~ once day)
 
-- As of 19/11/2019, the release of this site, the data.json file can be pulled
-  from fraz.redbrick.dcu.ie/data.json
+- As of 19/11/2019, the release of this site, the `data.json` file can be pulled
+  from `fraz.redbrick.dcu.ie/data.json`
   - This file is updated by a cron job running at 00:00 everyday. :)
 
 ## I want to make changes
@@ -54,37 +53,15 @@ So you want to make changes? okay.
 ### Requirements
 
 - Node
-- NPM
+- `npm`/`yarn`
 - Slight insanity
 - general understanding of ReactJS
 
 ### Installation
 
 1. git clone the repo
-2. run npm install in the root directory
-3. start a hotreload server with npm start
+2. run `yarn` in the root directory
+3. start a hotreload server with `npm dev`
 4. make changes and watch the magical hot reload take action live!
 
-Note: the main code is located in /src
-
-## Common Issues
-
-### .htaccess
-
-- Since react uses a virtual router all requests to the site should redirect to
-  the index.
-- The easiest way of doing this if running apache is to drop a .htaccess file
-  into the root folder.
-- Ensure the permissions of this is readable.
-
-```.htaccess
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
-</IfModule>
-```
+Note: the main code is located in `src`

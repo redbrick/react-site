@@ -1,5 +1,5 @@
 const path = require(`path`);
-const { name, description, author } = require('./package.json');
+const { name, description, author, homepage } = require('./package.json');
 
 require('dotenv').config();
 
@@ -8,7 +8,7 @@ module.exports = {
     title: name,
     description,
     author,
-    siteUrl: 'https://redbrick.dcu.ie',
+    siteUrl: homepage,
     dataURL: 'https://fraz.redbrick.dcu.ie/data.json',
     committee: {
       year: '2019/20',
