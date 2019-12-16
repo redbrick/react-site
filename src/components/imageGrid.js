@@ -15,7 +15,7 @@ export default function ImageGrid({
   const [isOpen, setIsOpen] = useState(false);
   const [currImg, setCurrImg] = useState(0);
 
-  if (!images) return;
+  if (!images) return <></>;
 
   function gotoNext() {
     setCurrImg(currImg + 1);
