@@ -9,13 +9,30 @@ import {
   faPaste,
   faEnvelope,
   faInfo,
+  faTag,
+  faLocationArrow,
+  faInfoCircle,
+  faUser,
+  faCalendar,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Navbar from './navbar.jsx';
 import Status from './status';
 import './core.css';
 
-library.add(fab, faShareAltSquare, faFile, faPaste, faEnvelope, faInfo);
+library.add(
+  fab,
+  faShareAltSquare,
+  faFile,
+  faPaste,
+  faEnvelope,
+  faInfo,
+  faTag,
+  faLocationArrow,
+  faInfoCircle,
+  faUser,
+  faCalendar,
+);
 
 const Layout = ({ children }) => (
   <StaticQuery

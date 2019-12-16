@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Slides = ({ slides }) => (
   <div className="Events">
@@ -11,16 +12,16 @@ const Slides = ({ slides }) => (
           <div className="Event-Heading">{slide.name}</div>
           <div className="Event-Tags">
             <span className="Event-Tag">
-              <i className="fa fa-user" />
+              <FontAwesomeIcon icon="user" />
               {slide.presenter}
             </span>
             <span className="Event-Location">
-              <i className="fa fa-calendar" />
+              <FontAwesomeIcon icon="calendar" />
               {slide.date}
             </span>
           </div>
           <a href={slide.link} style={{ marginTop: '1em' }}>
-            <i className="Icon fa fa-slideshare" />
+            <FontAwesomeIcon className="Icon" icon={['fab', 'slideshare']} />
             View Slides
           </a>
         </div>

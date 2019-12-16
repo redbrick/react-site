@@ -231,6 +231,10 @@ code {
   margin-right: 1em;
 }
 
+.Event-Info svg {
+  margin-right: 1rem;
+}
+
 .fa {
   margin-right: 0.5em;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 export const event = {
@@ -18,17 +19,17 @@ const Event = ({ event: eventData }) => (
       <div className="Event-Heading">{eventData.name}</div>
       <div className="Event-Tags">
         <span className="Event-Tag">
-          <i className="fa fa-tag" />
+          <FontAwesomeIcon icon="tag" />
           {eventData.tag}
         </span>
         <span className="Event-Location">
-          <i className="fa fa-location-arrow" />
+          <FontAwesomeIcon icon="location-arrow" />
           {eventData.location} @ {eventData.datetime}
         </span>
       </div>
       <div className="Event-Description">{eventData.description}</div>
       <a href={eventData.link}>
-        <i className="Icon fa fa-info-circle" />
+        <FontAwesomeIcon icon="info-circle" className="Icon" />
         More Info
       </a>
     </div>
