@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html {
+  background-color: #121212;
+  color: #6f6f6f;
+  font-family: 'Montserrat', sans-serif;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Core {
+  display: flex;
+  flex-grow: 1;
+  background-color: #121212;
+  color: #6f6f6f;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.Right {
+  flex: 5;
+}
+
+/* Navigation */
+
+.Navbar {
+  flex: 1;
+  min-height: 100vh;
+  border-right: 0.2em solid;
+  border-color: #202020;
+  font-weight: 600;
+  background-color: #181818;
+  color: #7a7a7a;
+}
+
+.Navbar .Logo {
+  margin: 1rem;
+  width: 300px;
+  height: 70px;
+}
+
+.Navbar ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  list-style: none;
+  margin: 60px;
+  padding-left: 0;
+  border: 0px;
+}
+
+.Navbar ul li:nth-child(n + 2) {
+  margin-top: 10px;
+}
+
+.Navbar ul li {
+  border: 0px;
+  margin-left: -1px;
+}
+
+.Navbar ul li:hover {
+  border-color: red;
+  color: #d9d9d9;
+}
+
+.Navbar a {
+  text-decoration: none;
+}
+
+.Navbar ul a.active:before {
+  content: '> ';
+  color: #7a7a7a;
+  padding-left: 10px;
+  border: 0;
+  border-color: red;
+  border-left: 1px;
+  border-style: solid;
+}
+
+.Navbar a.inactive {
+  color: #7a7a7a;
+}
+
+.Navbar a:hover {
+  color: #d9d9d9;
+}
+
+.Navbar a.active {
+  color: white;
+}
+
+/* Status */
+
+.Status {
+  border-bottom: 0.2em solid;
+  border-color: #202020;
+  padding: 1em;
+  display: flex;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.Status-Text {
+  flex: 1;
+  color: green;
+  font-size: 1rem;
+}
+
+.Status-Text a svg {
+  margin-right: 0.5em;
+}
+
+.Status input {
+  border: 1px solid;
+  border-radius: 1em;
+  background-color: #121212;
+  padding: 0.2em;
+  padding-left: 0.5em;
+  color: whitesmoke;
+}
+
+.Status .Search {
+  margin-left: 0.5em;
+  color: red;
+}
+
+/* Main */
+
+.Main {
+  flex: 10;
+  margin-left: 10%;
+  min-width: 70%;
+  margin-top: 2rem;
+}
+
+/* Tabs */
+
+.Tabs {
+  padding: 0;
+  border: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  display: flex;
+  list-style: none;
+}
+
+.Tab:nth-child(n + 2) {
+  margin-left: 20px;
+}
+
+.Tab {
+  font-weight: 500;
+  margin-bottom: -1px;
+  border: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+}
+
+.Tab:hover {
+  border-color: #d60014;
+  color: #d60014;
+}
+
+.Tab-Active {
+  font-weight: 800;
+  border-color: #d60014;
+  color: #d60014;
+}
+
+/* Events */
+
+.Events-Header {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+
+.Events {
+  margin-bottom: 2rem;
+}
+
+/* Event */
+
+.Event {
+  display: flex;
+  max-width: 75%;
+}
+
+.Event:nth-child(n + 2) {
+  margin-top: 2em;
+}
+
+.Event-Featured {
+  flex: 1;
+  max-width: 125px;
+  max-height: 200px;
+}
+
+.Event-Info {
+  flex: 3;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.Event-Heading {
+  color: #fcfcfc;
+  font-size: 20px;
+}
+
+.Event-Tags {
+  display: inline-block;
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.Event-Tag {
+  color: #d60014;
+  margin-right: 1em;
+}
+
+.Event-Info svg {
+  margin-right: 1rem;
+}
+
+.fa {
+  margin-right: 0.5em;
+}
+
+.Event-Description {
+  margin-top: 0.5em;
+  font-size: 16px;
+}
+
+.Event a {
+  color: white;
+}
+
+/* Headings */
+
+h1 {
+  color: #fcfcfc;
+}
+
+h2 {
+  color: #7a7a7a;
+}
+
+/* Roblox */
+
+.Blocks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.Block {
+  color: #fcfcfc;
+  background-color: rgba(215, 23, 1, 0.5);
+  flex: 1;
+  border-radius: 1em;
+  font-weight: 500;
+  margin: 1em;
+  padding: 1em;
+  font-size: 1em;
+}
+
+.Blocks a {
+  min-width: 20%;
+  max-width: 300px;
+  text-align: center;
+  color: #fcfcfc;
+  text-decoration: none;
+}
+
+.Blocks svg {
+  margin-right: 0.5em;
+}
+
+/* Page */
+
+.Page-Section {
+  max-width: 70%;
+}
+
+.Page-Section a {
+  color: crimson;
+}
+
+/* Committee */
+
+.Member {
+  padding: 1em;
+  text-align: center;
+}
+
+.Member img {
+  max-width: 200px;
+  max-height: 200px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.Member-Name {
+  color: white;
+  padding: 0.2em;
+}
+
+.Member-Position {
+  font-size: 12px;
+}
+
+.Committee-Box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Image Grid */
+
+.ImageGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.GridImage {
+  padding: 4px;
+  vertical-align: middle;
+  max-height: 200px;
+}
+
+/* Tables */
+
+td {
+  padding: 1em;
+}
+
+/* Misc */
+
+.Icon {
+  color: #d60014;
+  font-size: 24px;
+}
+
+hr {
+  display: inline-block;
+  background-color: #6f6f6f;
+  border-color: #6f6f6f;
+  width: 90%;
+}
+
+code {
+  display: block;
+  color: crimson;
+}
+
+/* Button */
+
+.Button {
+  margin: 1rem;
+  border: 0;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid crimson;
+  border-radius: 25px;
+  color: white;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 800px) {
+  .Core {
+    flex-direction: column;
+  }
+
+  .Main {
+    margin-left: 10%;
+    max-width: 100%;
+  }
+
+  .Navbar {
+    width: 100vw;
+    min-height: 20vh;
+    height: 50%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .Navbar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  .Navbar ul li {
+    margin: 10px 0 0;
+    padding: 0 1rem;
+    border-left: 0;
+  }
+
+  .Status {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .Status-Text {
+    display: none;
+  }
+
+  .Blocks {
+    flex-direction: column;
+  }
+}
