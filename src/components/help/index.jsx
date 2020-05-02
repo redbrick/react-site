@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import Layout from '../components/layout.jsx';
-import SEO from '../components/seo.jsx';
-import Exams from '../content/exams.mdx';
-import Joining from '../content/joining.mdx';
-import Helpdesk from '../content/helpdesk.mdx';
-import Services from '../content/services.mdx';
+import Layout from '../layout.jsx';
+import SEO from '../seo.jsx';
+import Exams from './exams.mdx';
+import Joining from './joining.mdx';
+import Helpdesk from './helpdesk.mdx';
+import Services from './services.mdx';
 
 const active = (tab, id) => (tab === id ? 'Tab Tab-Active' : 'Tab');
 
@@ -24,12 +24,11 @@ function displayTab(tab) {
   }
 }
 
-export default function Help() {
-  const [tab, setTab] = useState(0);
+export default function Help(index) {
+  const [tab, setTab] = useState(index);
 
   const tabHandler = e => {
     e.preventDefault();
-
     setTab(parseInt(e.target.getAttribute('tab'), 10));
   };
 

@@ -7,7 +7,7 @@ export const event = {
   name: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
-  datetime: PropTypes.string,
+  date__Time: PropTypes.string,
   description: PropTypes.string,
   link: PropTypes.string,
 };
@@ -24,14 +24,18 @@ const Event = ({ event: eventData }) => (
         </span>
         <span className="Event-Location">
           <FontAwesomeIcon icon="location-arrow" />
-          {eventData.location} @ {eventData.datetime}
+          {eventData.location} @ {eventData.date__Time}
         </span>
       </div>
       <div className="Event-Description">{eventData.description}</div>
-      <a href={eventData.link}>
-        <FontAwesomeIcon icon="info-circle" className="Icon" />
-        More Info
-      </a>
+      {eventData.lint === null ? (
+        <></>
+      ) : (
+        <a href={eventData.link}>
+          <FontAwesomeIcon icon="info-circle" className="Icon" />
+          More Info
+        </a>
+      )}
     </div>
   </div>
 );

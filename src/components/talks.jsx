@@ -6,18 +6,18 @@ const Slides = ({ slides }) => (
   <div className="Events">
     <h5 className="Events-Header">View all our lovely slides from past events!</h5>
     {slides.map(slide => (
-      <div key={slide.name} className="Event">
-        <img className="Event-Featured" src={slide.image} alt={slide.name} />
+      <div key={slide.talkName} className="Event">
+        <img className="Event-Featured" src={slide.slideDeckImageDIRECTURL} alt={slide.talkName} />
         <div className="Event-Info">
-          <div className="Event-Heading">{slide.name}</div>
+          <div className="Event-Heading">{slide.talkName}</div>
           <div className="Event-Tags">
             <span className="Event-Tag">
               <FontAwesomeIcon icon="user" />
-              {slide.presenter}
+              {slide.talkPresenter}
             </span>
             <span className="Event-Location">
               <FontAwesomeIcon icon="calendar" />
-              {slide.date}
+              {slide.talkDate}
             </span>
           </div>
           <a href={slide.link} style={{ marginTop: '1em' }}>

@@ -28,7 +28,9 @@ export default function Navbar() {
   );
   return (
     <div className="Navbar">
-      <Img fluid={file.childImageSharp.fluid} className="Logo" alt="Redbrick Logo" />
+      <Link to="/">
+        <Img fluid={file.childImageSharp.fluid} className="Logo" alt="Redbrick Logo" />
+      </Link>
       <ul>
         {site.siteMetadata.menu.map(link => (
           <li key={link.name}>

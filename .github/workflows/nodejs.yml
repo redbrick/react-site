@@ -20,3 +20,5 @@ jobs:
         name: Install dependencies
       - run: yarn build
         name: Build Site
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -7,55 +7,71 @@ import Layout from '../components/layout.jsx';
 import SEO from '../components/seo.jsx';
 
 import { getRandomImages } from '../utils/shuffle.js';
+import { eventPassed, eventUpcomming } from '../utils/events.js';
 
-export default function Index({
+const Index = ({
   data: {
     site: {
-      siteMetadata: { title, dataURL },
+      siteMetadata: { title },
     },
+    allGoogleEventsSheet: { nodes },
+    allGoogleSlidesSheet,
+    allGoogleImagesSheet,
   },
-}) {
-  const [events, setEvents] = useState([]);
-  const [pastEvents, setPastEvents] = useState([]);
-  const [slides, setSlides] = useState([]);
-  const [images, setImages] = useState([]);
-  useEffect(() => {
-    fetch(dataURL)
-      .then(resp => resp.json())
-      .then(data => {
-        setEvents(data[0]);
-        setPastEvents(data[1]);
-        setSlides(data[3]);
-        setImages(data[4]);
-      });
-  }, [dataURL]);
-
-  return (
-    <Layout>
-      <SEO title={title} />
-      <Home
-        images={getRandomImages(images, 18)}
-        pastEvents={pastEvents}
-        slides={slides}
-        events={events}
-        isEventsPage={false}
-      />
-    </Layout>
-  );
-}
+}) => (
+  <Layout>
+    <SEO title={title} />
+    <Home
+      images={getRandomImages(allGoogleImagesSheet.nodes, 18)}
+      events={nodes.filter(eventUpcomming)}
+      pastEvents={nodes.filter(eventPassed)}
+      slides={allGoogleSlidesSheet.nodes}
+      isEventsPage={false}
+    />
+  </Layout>
+);
 
 Index.propTypes = {
   data: PropTypes.instanceOf({
-    site: { siteMetadata: { title: PropTypes.string, dataURL: PropTypes.string } },
+    site: { siteMetadata: { title: PropTypes.string } },
+    allGoogleEventsSheet: { nodes: PropTypes.arrayOf(PropTypes.object) },
+    allGoogleSlidesSheet: { nodes: PropTypes.arrayOf(PropTypes.object) },
+    allGoogleImagesSheet: { nodes: PropTypes.arrayOf({ uRL_: PropTypes.string }) },
   }).isRequired,
 };
 
+export default Index;
 export const query = graphql`
   query {
     site {
       siteMetadata {
         title
-        dataURL
+      }
+    }
+    allGoogleEventsSheet {
+      nodes {
+        name
+        date__Time
+        location
+        tag
+        description
+        link
+        image
+        isFinished_
+      }
+    }
+    allGoogleSlidesSheet {
+      nodes {
+        slideDeckImageDIRECTURL
+        slideLink
+        talkDate
+        talkPresenter
+        talkName
+      }
+    }
+    allGoogleImagesSheet {
+      nodes {
+        uRL_
       }
     }
   }
