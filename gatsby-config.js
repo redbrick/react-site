@@ -17,11 +17,11 @@ module.exports = {
     },
     menu: [
       { name: 'Home', to: '/' },
-      { to: '/events', name: 'Events' },
-      { to: '/about', name: 'About' },
-      { to: '/help', name: 'Help' },
-      { to: '/services', name: 'Services' },
-      { to: 'https://discord.gg/3aRU5BQ', name: 'Discord', external: true },
+      { name: 'Events', to: '/events' },
+      { name: 'About', to: '/about' },
+      { name: 'Help', to: '/help' },
+      { name: 'Services', to: '/services' },
+      { name: 'Discord', to: 'https://discord.gg/3aRU5BQ', external: true },
     ],
     social: [
       {

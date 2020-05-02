@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Slides = ({ slides }) => (
+export const Slides = ({ slides }) => (
   <div className="Events">
     <h5 className="Events-Header">View all our lovely slides from past events!</h5>
     {slides.map(slide => (
@@ -33,5 +33,3 @@ const Slides = ({ slides }) => (
 Slides.propTypes = {
   slides: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-
-export default Slides;

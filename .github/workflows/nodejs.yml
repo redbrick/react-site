@@ -22,3 +22,5 @@ jobs:
         name: Build Site
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          SPREADSHEET_ID: "15pFYVzuFPK4HFOpnnFHuoTNh3L3iThBCpoVMQzT5RlM"
+          UPTIME_ROBOT_APIKEY: "xxx"

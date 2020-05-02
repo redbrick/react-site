@@ -50,6 +50,8 @@ Services.propTypes = {
     },
   }).isRequired,
 };
+
+export default Services;
 export const query = graphql`
   query {
     site {
@@ -63,4 +65,3 @@ export const query = graphql`
     }
   }
 `;
-export default Services;

@@ -30,6 +30,7 @@ Events.propTypes = {
     allGoogleSlidesSheet: { nodes: PropTypes.arrayOf(PropTypes.object) },
   }).isRequired,
 };
+
 export default Events;
 export const query = graphql`
   query {

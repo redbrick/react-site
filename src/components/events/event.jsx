@@ -12,7 +12,7 @@ export const event = {
   link: PropTypes.string,
 };
 
-const Event = ({ event: eventData }) => (
+export const Event = ({ event: eventData }) => (
   <div className="Event">
     <img className="Event-Featured" src={eventData.image} alt={eventData.name} />
     <div className="Event-Info">
@@ -43,5 +43,3 @@ const Event = ({ event: eventData }) => (
 Event.propTypes = {
   event: PropTypes.instanceOf(event).isRequired,
 };
-
-export default Event;
