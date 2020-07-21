@@ -17,7 +17,7 @@ export default function ImageGrid({ images }) {
     <div>
       <div className="ImageGrid">
         {shuffle(
-          images.map(([src], index) => (
+          images.map((src, index) => (
             <a
               href={src}
               key={src}
@@ -35,7 +35,7 @@ export default function ImageGrid({ images }) {
       <ImgsViewer
         backdropCloseable
         currImg={currImg}
-        imgs={images.map(([src]) => ({ src }))}
+        imgs={images.map(src => ({ src }))}
         isOpen={isOpen}
         onClickImg={() => {
           if (currImg === images.length - 1) return;
@@ -58,5 +58,5 @@ export default function ImageGrid({ images }) {
 }
 
 ImageGrid.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

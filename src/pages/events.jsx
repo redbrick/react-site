@@ -1,50 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/layout.jsx';
 import SEO from '../components/seo.jsx';
 import Home from '../components/home.jsx';
+import { eventPassed, eventUpcomming } from '../utils/events.js';
 
-export default function Events({
+const Events = ({
   data: {
-    site: {
-      siteMetadata: { dataURL },
-    },
+    allGoogleEventsSheet: { nodes },
+    allGoogleSlidesSheet,
   },
-}) {
-  const [events, setEvents] = useState([]);
-  const [pastEvents, setPastEvents] = useState([]);
-  const [slides, setSlides] = useState([]);
-  useEffect(() => {
-    fetch(dataURL)
-      .then(resp => resp.json())
-      .then(data => {
-        setEvents(data[0]);
-        setPastEvents(data[1]);
-        setSlides(data[3]);
-      });
-  }, [dataURL]);
-
-  return (
-    <Layout>
-      <SEO title="Events" />
-      <Home events={events} pastEvents={pastEvents} slides={slides} isEventsPage />
-    </Layout>
-  );
-}
+}) => (
+  <Layout>
+    <SEO title="Events" />
+    <Home
+      events={nodes.filter(eventUpcomming)}
+      pastEvents={nodes.filter(eventPassed)}
+      slides={allGoogleSlidesSheet.nodes}
+      isEventsPage
+    />
+  </Layout>
+);
 
 Events.propTypes = {
   data: PropTypes.instanceOf({
-    site: { siteMetadata: { dataURL: PropTypes.string } },
+    allGoogleEventsSheet: { nodes: PropTypes.arrayOf(PropTypes.object) },
+    allGoogleSlidesSheet: { nodes: PropTypes.arrayOf(PropTypes.object) },
   }).isRequired,
 };
 
+export default Events;
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        dataURL
+    allGoogleEventsSheet {
+      nodes {
+        name
+        date__Time
+        location
+        tag
+        description
+        link
+        image
+        isFinished_
+      }
+    }
+    allGoogleSlidesSheet {
+      nodes {
+        slideDeckImageDIRECTURL
+        slideLink
+        talkDate
+        talkPresenter
+        talkName
       }
     }
   }

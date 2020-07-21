@@ -56,9 +56,9 @@ const Layout = ({ children }) => (
         siteMetadata: { uptimeRobot, social },
       },
     }) => (
-      <div className="Core">
+      <div className="core">
         <Navbar />
-        <div className="Right">
+        <div className="right">
           <Status apiKey={uptimeRobot.apiKey} social={social} />
           {children}
         </div>

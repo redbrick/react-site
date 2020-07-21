@@ -22,7 +22,7 @@ code {
     monospace;
 }
 
-.Core {
+.core {
   display: flex;
   flex-grow: 1;
   background-color: #121212;
@@ -30,7 +30,7 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
-.Right {
+.right {
   flex: 5;
 }
 
@@ -307,7 +307,7 @@ h2 {
   text-align: center;
 }
 
-.Member img {
+.Member-Img {
   max-width: 200px;
   max-height: 200px;
   height: 200px;
@@ -383,7 +383,7 @@ code {
 /* Media Queries */
 
 @media only screen and (max-width: 800px) {
-  .Core {
+  .core {
     flex-direction: column;
   }
 

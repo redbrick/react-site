@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Event, { event } from './event.jsx';
+import { Event, event } from './event.jsx';
 
-export default function Events({ title, events }) {
+export function Events({ title, events }) {
   const [viewAll, setViewAll] = useState(false);
 
   return (

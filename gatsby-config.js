@@ -9,20 +9,19 @@ module.exports = {
     description,
     author,
     siteUrl: homepage,
-    dataURL: 'https://fraz.redbrick.dcu.ie/data.json',
     committee: {
-      year: '2019/20',
+      year: '2020/21',
     },
     uptimeRobot: {
       apiKey: process.env.UPTIME_ROBOT_APIKEY,
     },
     menu: [
       { name: 'Home', to: '/' },
-      { to: '/events', name: 'Events' },
-      { to: '/about', name: 'About' },
-      { to: '/help', name: 'Help' },
-      { to: '/services', name: 'Services' },
-      { to: 'https://discord.gg/3aRU5BQ', name: 'Discord', external: true },
+      { name: 'Events', to: '/events' },
+      { name: 'About', to: '/about' },
+      { name: 'Help', to: '/help' },
+      { name: 'Services', to: '/services' },
+      { name: 'Discord', to: 'https://discord.gg/3aRU5BQ', external: true },
     ],
     social: [
       {
@@ -50,7 +49,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-mdx`,
+    'gatsby-plugin-mdx',
+    'gatsby-plugin-preact',
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -84,6 +84,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-source-google-spreadsheets',
+      options: {
+        spreadsheetId: process.env.SPREADSHEET_ID,
+        apiKey: process.env.GOOGLE_API_KEY,
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

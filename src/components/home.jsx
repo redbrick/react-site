@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Events from './events.jsx';
-import Slides from './talks.jsx';
+
+import { Events, Slides, event } from './events';
 import ImageGrid from './imageGrid.jsx';
-import { event } from './event.jsx';
 
 const active = (tab, id) => (tab === id ? 'Tab Tab-Active' : 'Tab');
 
