@@ -6,7 +6,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --log-pages",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx,css,mdx} *.{json,js,md}",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -41,7 +41,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.3.7",
     "gatsby-source-filesystem": "^2.1.42",
-    "gatsby-source-google-spreadsheets": "^3.0.5",
+    "gatsby-source-google-spreadsheets": "^3.0.8",
     "gatsby-transformer-sharp": "^2.3.9",
     "preact": "^10.4.1",
     "prettier": "^1.19.1",

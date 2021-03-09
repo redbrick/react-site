@@ -42,13 +42,11 @@ export const query = graphql`
         tag
         description
         link
-        image
         isFinished_
       }
     }
     allGoogleSlidesSheet {
       nodes {
-        slideDeckImageDIRECTURL
         slideLink
         talkDate
         talkPresenter

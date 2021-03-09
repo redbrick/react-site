@@ -1,8 +1,12 @@
 ---
-name: Node CI
+name: Build Redbrick Site
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - master
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,3 +28,11 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           SPREADSHEET_ID: "15pFYVzuFPK4HFOpnnFHuoTNh3L3iThBCpoVMQzT5RlM"
           UPTIME_ROBOT_APIKEY: "xxx"
+          CI: true
+      - name: Package Public Folder
+        run: tar -czvf redbrick-site_node-${{ matrix.node-version }}.tar.gz ./public
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Redbrick Site node-${{ matrix.node-version }}
+          path: redbrick-site_node-${{ matrix.node-version }}.tar.gz
+          retention-days: 5
