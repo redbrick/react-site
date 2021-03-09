@@ -6,7 +6,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --log-pages",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx,css,mdx} *.{json,js,md}",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
