@@ -42,12 +42,6 @@ rsync -avh --chown=1001:1022 ./public/* hardcase:/storage/webtree/redbrick/htdoc
 ```
 5. congrats, you're done!
 
-- Ensure the JSON file `siteMetadata.dataURL` is set to pull from is being
-  regularly updated (~ once day)
-
-- As of 19/11/2019, the release of this site, the `data.json` file can be pulled
-  from `fraz.redbrick.dcu.ie/data.json`
-
 ## I want to make changes
 
 So you want to make changes? okay.
