@@ -26,25 +26,27 @@ The google sheet controlling the information can be found
     - Talk Slides
 - Displaying general information about the society
 - Mobile friendlyish
+- Automatic build daily on github
 
 ## Deployment
 
-1. git clone the repo.
-2. run `yarn`.
-3. ensure the `homepage` in `package.json` is set correctly.
-4. ensure `siteMetadata.dataURL` in `gatsby-config.js` is set to pull
-   information from the correct JSON file.
-5. run `yarn build`.
-6. ensure there are no errors in the output.
-7. copy &amp; paste the static files in the build folder that has been created.
-   This is your site now :)
+
+Deployment has been made simple!  
+Github now builds the site daily. All you have to do is simply:  
+1. click on the latest build.
+2. scroll down to artifacts.
+3. download the tar, extract it.
+4. deploy its content to redbrick using:
+```
+rsync -avh --chown=1001:1022 ./public/* hardcase:/storage/webtree/redbrick/htdocs 
+```
+5. congrats, you're done!
 
 - Ensure the JSON file `siteMetadata.dataURL` is set to pull from is being
   regularly updated (~ once day)
 
 - As of 19/11/2019, the release of this site, the `data.json` file can be pulled
   from `fraz.redbrick.dcu.ie/data.json`
-  - This file is updated by a cron job running at 00:00 everyday. :)
 
 ## I want to make changes
 
